@@ -63,7 +63,7 @@ public class DBServicesImpl implements DBService {
         if (type == Type.IMAGE) {
             //image code
 
-            Image image = (Image) doc;
+            Image image = (Image) doc;//my image class
             byte[] imagesBytes = image.getImagesBytes();
 
             //create directory, write the byte, store the path in database, handle result
@@ -161,8 +161,8 @@ public class DBServicesImpl implements DBService {
 
         if (!usernameExists(u.getUsername())) {
             try {
-                String query = String.format("insert into USER values(null,'" + u.getFirstname() + "','" + u.getLastname() + "'," +
-                        "'" + u.getSex() + "','" + u.getEmail() + "','" + u.getUsername() + "','" + getSaltedHash(u.getPassword()) + "');");
+                String query = "insert into USER values(null,'" + u.getFirstname() + "','" + u.getLastname() + "'," +
+                        "'" + u.getSex() + "','" + u.getEmail() + "','" + u.getUsername() + "','" + getSaltedHash(u.getPassword()) + "');";
 
                 statement.execute(query);
                 return true;
@@ -187,8 +187,9 @@ public class DBServicesImpl implements DBService {
 
         ArrayList<ArrayList> result = new ArrayList<ArrayList>();
         ArrayList<Image> images = new ArrayList<Image>();
-        ArrayList<File> files = new ArrayList<File>();
+        ArrayList<File> files = new ArrayList<>();
 
+        //my classes
         Image image;
         File file;
 

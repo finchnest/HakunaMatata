@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 
 //I need to have serialVersionUID explicitly stated in my class in case I unknowingly
-// make the class in the server package
+// change the class in the server package
 
 
 public interface DBService {
